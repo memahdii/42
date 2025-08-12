@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmirzaho <mmirzaho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/09 23:32:38 by mmirzaho          #+#    #+#             */
-/*   Updated: 2025/08/10 16:58:42 by mmirzaho         ###   ########.fr       */
+/*   Created: 2025/08/11 22:28:49 by mmirzaho          #+#    #+#             */
+/*   Updated: 2025/08/12 15:47:41 by mmirzaho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 int	cal_length(char *str)
 {
 	int	count;
-	int	i;
 
 	count = 0;
-	i = 0;
-	while (str[i] != '\0')
+	while (str[count] != '\0')
 	{
 		count++;
-		i++;
 	}
 	return (count);
 }
@@ -62,13 +59,7 @@ char	*ft_strstr(char *str, char *to_find)
 	j = 0;
 	if (cal_length(to_find) == 0)
 		return (&str[0]);
+	if (cal_length(str) == 0)
+		return (NULL);
 	return (to_match(i, j, str, to_find));
 }
-
-// int main(void)
-// {
-//     char str[] = "testMahdi";
-//     char to_find[] = "st";
-//     printf("%s", ft_strstr(str, to_find));
-//     return (0);
-// }
